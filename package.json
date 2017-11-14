@@ -1,6 +1,6 @@
 {
   "name": "official",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "I'm working on this, I promise",
   "main": "index.js",
   "scripts": {
