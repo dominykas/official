@@ -8,7 +8,8 @@ const Eslint = require('eslint');
 exports.lint = function () {
 
     const configuration = {
-        ignore: true
+        ignore: true,
+        configFile: require.resolve('./.eslintrc.js')
     };
 
     const engine = new Eslint.CLIEngine(configuration);
