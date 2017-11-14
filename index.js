@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 'use strict';
 
 // mostly ripped from lab: https://github.com/hapijs/lab/blob/master/lib/linter/index.js
@@ -38,4 +39,39 @@ exports.lint = function () {
     });
 };
 
-console.log(exports.lint());
+if (require.main === module) {
+
+    let errors = 0;
+    let warnings = 0;
+
+    const lintResults = exports.lint();
+    lintResults.forEach((entry) => {
+
+        if (!entry.errors || !entry.errors.length) {
+            return;
+        }
+
+        console.error(`\n\t${entry.filename}:`);
+
+        entry.errors.forEach((err) => {
+
+            if (err.severity === 'ERROR') {
+                ++errors;
+            }
+            else {
+                ++warnings;
+            }
+
+            console.error(`\n\t\tLine ${err.line}: ${err.message}`);
+        });
+
+    });
+
+    if (errors + warnings > 0) {
+        process.exit(1);
+    }
+    else {
+        console.log('No issues');
+    }
+
+}
