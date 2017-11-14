@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/dominykas/official/issues"
   },
-  "homepage": "https://github.com/dominykas/official#readme"
+  "homepage": "https://github.com/dominykas/official#readme",
+  "dependencies": {
+    "eslint": "4.x.x",
+    "eslint-config-hapi": "11.x.x",
+    "eslint-plugin-hapi": "4.x.x"
+  }
 }
