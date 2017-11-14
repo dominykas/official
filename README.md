@@ -1,6 +1,6 @@
 # official
 
-Not happy with the standard style of Javascript? Use the official style of Javascript.
+This is the style of Javascript. It's official.
 
 To install:
 ```
