@@ -1,5 +1,9 @@
 'use strict';
 
 module.exports = {
-  extends: ['eslint-config-hapi']
+    'extends': '@hapi/hapi',
+
+    "parserOptions": {
+        "ecmaVersion": 2019
+    }
 };
